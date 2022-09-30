@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/171.9000f764.chunk.css","mappings":"AAAA,0BACI,YAAa,CAEb,cAAe,CADf,QAAS,CAET,YACJ","sources":["pages/Home/Home.module.css"],"sourcesContent":[".trendingBlok {\n    display: flex;\n    gap: 30px;\n    font-size: 23px;\n    padding: 50px;\n}\n"],"names":[],"sourceRoot":""}
