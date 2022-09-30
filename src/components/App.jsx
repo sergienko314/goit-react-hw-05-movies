@@ -4,19 +4,19 @@ import { Navigate, Route, Routes } from "react-router-dom"
 
 
 
-const MainElement = lazy(() => import("./MainElement"));
+const MainElement = lazy(() => import("./MainElement/MainElement"));
 const Home = lazy(() => import("../pages/Home"));
 const Movies = lazy(() => import("../pages/Movies"));
-const MoviesCard = lazy(() => import("./MoviesCard/Reviews"));
-const Cast = lazy(() => import("./MoviesCard/Cast"));
-const Reviews = lazy(() => import("../components/MoviesCard/Reviews"));
+const MoviesCard = lazy(() => import("./MoviesDatails/MuviesCard/MoviesCard"));
+const Cast = lazy(() => import("./MoviesDatails/Cast/Cast"));
+const Reviews = lazy(() => import("./MoviesDatails/Reviews/Reviews"))
 
 
 export const App = () => {
   return (
     
     <>
-    <Suspense fallback={<h2>Loading CountryNewsPage</h2>}>
+    <Suspense fallback={<h2>Loading Page</h2>}>
       <Routes>
         <Route path="/" element={<MainElement/>}>
           <Route index element={<Home/>} />

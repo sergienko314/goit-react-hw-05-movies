@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import apiGet from '../../utils/ApiFilmes'
+import apiGet from '../../../utils/ApiFilmes'
 const Cast = () => {
     const { movieId } = useParams()
     const [castInfo, setCastInfo] = useState([])

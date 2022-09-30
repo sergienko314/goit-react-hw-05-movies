@@ -7,7 +7,8 @@ import {
   useNavigate,
   useParams,
 } from 'react-router-dom';
-import apiGet from '../../utils/ApiFilmes';
+import apiGet from '../../../utils/ApiFilmes';
+import styles from './MoviesCard.module.css'
 
 const MoviesCard = () => {
   const { movieId } = useParams();
@@ -41,44 +42,26 @@ const MoviesCard = () => {
 
   return (
     Object.keys(data).length > 0 && (
-      <div
-        style={{
-          background: `url(https://image.tmdb.org/t/p/w500${backdrop_path})`,
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'cover',
-          margin: '30px 0px',
-          color: 'white',
-          textShadow: '1px 1px 2px black',
+      <div>
+        <div
+          className={styles.poster}
+          style={{
+          background: `url(https://image.tmdb.org/t/p/w500${backdrop_path})`
         }}
       >
         <div
           key={movieId}
-          style={{
-            backgroundColor: 'rgba(124, 125, 126, 0.426)',
-            flexDirection: 'row',
-            display: 'flex',
-            margin: '0',
-            maxWidth: '100%',
-          }}
+          className={styles.muvieCardBlock}
         >
-          <button
-            style={{
-              maxHeight: '50vw',
-              fontSize: '45px',
-              backgroundColor: 'rgba(124, 125, 126, 0.426)',
-              color: 'white',
-            }}
+            <button
+              className={styles.goBackButton}
+            
             onClick={() => navigate(location.state)}
           >
             ↩️ <br></br> go back
           </button>
-          <img
-            style={{
-              width: '100%',
-              maxWidth: '100%',
-              height: '50vw',
-              maxHeight: '100%',
-            }}
+            <img
+              className={styles.posterImg}
             src={`https://image.tmdb.org/t/p/w500${poster_path}`}
             alt=""
           />
@@ -94,15 +77,7 @@ const MoviesCard = () => {
             <p>{overview || 'нажаль опис поки в розробці'}</p>
             <h3>Genres</h3>
             <p>{genres.map(gen => gen.name + ' ')}</p>
-            <div
-              style={{
-                padding: '50px',
-                display: 'flex',
-                color: 'white',
-                fontSize: '23px',
-                gap: '30px',
-              }}
-            >
+            <div className={styles.styleLinkButton} >
               <Link state={location.state} to={`/movies/${movieId}/reviews`}>
                 Reviews
               </Link>
@@ -112,17 +87,11 @@ const MoviesCard = () => {
             </div>
           </div>
         </div>
-        <div style={{
-            display: 'flex',
-            gap: '15px',
-            // justifyContent: 'space-around',
-            flexDirection: 'column',
-          }}
-        >
-          
+          <div className={styles.filmList}> 
         </div>
-        <Outlet />
       </div>
+      <Outlet/>
+      </div >
     )
   );
 };

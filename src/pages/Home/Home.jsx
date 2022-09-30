@@ -1,6 +1,7 @@
-import TrendList from 'components/TrendList';
+import TrendList from 'components/TrendList/TrendList';
 import { useEffect, useState } from 'react';
 import apiGet from '../../utils/ApiFilmes';
+import style from "./Home.module.css";
 
 const Home = () => {
   const [cinema, setCinema] = useState([]);
@@ -21,13 +22,7 @@ const Home = () => {
       <h1>Tranding Filmes </h1>
       <div>
         <div
-          style={{
-            display: 'flex',
-            gap: '30px',
-            fontSize: '23px',
-            padding: '50px',
-          }}
-        >
+         className={style.trendingBlok}>
           <TrendList filmes={cinema} />
         </div>
       </div>

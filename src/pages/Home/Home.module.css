@@ -1,0 +1,6 @@
+.trendingBlok {
+    display: flex;
+    gap: 30px;
+    font-size: 23px;
+    padding: 50px;
+}

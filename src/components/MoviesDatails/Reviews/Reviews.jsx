@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import apiGet from '../../utils/ApiFilmes'
+import apiGet from '../../../utils/ApiFilmes'
 const Reviews = () => {
     const { movieId } = useParams()
     const [reviuesInfo, setReviuesInfo] = useState([])
@@ -25,8 +25,8 @@ const Reviews = () => {
             {reviuesInfo.length > 0 ? (
             reviuesInfo.map(({ id, author, content }) => {
                 return (
-                    <ul>
-                        <li key={id}>
+                    <ul key={id} >
+                        <li>
                     <p>{author}</p>
                     <p>{content}</p>
                         </li>

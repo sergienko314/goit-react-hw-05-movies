@@ -1,0 +1,43 @@
+.poster {
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 30px 0px;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+.muvieCardBlock {
+    background-color: rgba(124, 125, 126, 0.426);
+    flex-direction: row;
+    display: flex;
+    margin: 0;
+    max-width: 100%;
+}
+
+.goBackButton {
+    max-height: 50vw;
+    font-size: 45px;
+    background-color: rgba(124, 125, 126, 0.426);
+    color: white;
+}
+
+.posterImg {
+    width: 100%;
+    max-width: 100%;
+    height: 50vw;
+    max-height: 100%;
+}
+
+.styleLinkButton {
+    padding: 50px;
+    display: flex;
+    color: white;
+    font-size: 23px;
+    gap: 30px;
+}
+
+.filmList {
+    display: flex;
+    gap: 15px;
+    flex-direction: colum;
+}

@@ -1,8 +1,9 @@
-import TrendList from 'components/TrendList';
+import TrendList from 'components/TrendList/TrendList';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import apiGet from 'utils/ApiFilmes';
+import style from "./Movies.module.css";
 const Movies = () => {
     const [input, setInput] = useState('');
     const [filmList, setFilmList] = useState([])
@@ -33,20 +34,14 @@ const handleSubmit = (e) => {
 };
     return (
         <>
-        <div
-        style={{
-            padding: '30px 40px',
-            display: 'flex',
-            justifyContent: 'flex-start',
-        }}
-    >
+        <div className={style.serchForm} >
         <form onSubmit={handleSubmit} >
             <input
                 onChange={(e) => setInput(e.target.value)}
-                style={{ width: '300px' }}
+                className={style.input}
                 type="text"
             />
-            <button type='submit' style={{ alineItems: 'center' }}>🔎</button>
+            <button type='submit' className={style.buttonSerch}>🔎</button>
         </form>
     </div>
        { filmList.length > 0 && <TrendList  filmes={filmList}/> }
