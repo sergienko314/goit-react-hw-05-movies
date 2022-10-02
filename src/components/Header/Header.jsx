@@ -7,7 +7,7 @@ const setActiveStyle = ({ isActive }) =>
 const Header = () => {
     return (
       <NavLinkStyle>
-        <NavLink style={setActiveStyle} to="/">
+        <NavLink style={setActiveStyle} end to="/">
           Home Page
         </NavLink>
 
